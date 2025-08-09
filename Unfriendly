@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact APS Office</title>
+  <style>
+    body {
+      font-family: Verdana, sans-serif; /* Decent font but uninspired */
+      background-color: #f0f0f0; /* Generic, dull background */
+      color: #333; /* Low contrast with the background */
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      text-align: left; /* Misaligned container text */
+      background-color: #fff; /* Plain white background */
+      padding: 10px; /* Minimal padding */
+      border: 2px solid #ccc; /* Bland border */
+      width: 80%; /* Too wide for readability */
+      line-height: 1.2; /* Cramped text */
+    }
+
+    h1 {
+      color: #555; /* Low-contrast header */
+      font-size: 20px; /* Smaller than needed for a header */
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 14px; /* Small text */
+      margin-bottom: 5px; /* Tight spacing */
+    }
+
+    .email-text {
+      font-size: 14px; /* Small and hard to read */
+      color: #777; /* Faint text color */
+      background-color: #eaeaea; /* Almost blends into the background */
+      padding: 5px; /* Minimal space around text */
+      border: 1px solid #ddd; /* Barely visible border */
+      display: inline-block;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Contact APS Office</h1>
+    <p>If you have any questions, you can email us at:</p>
+    <div class="email-text">aps@kfupm.edu.sa</div>
+  </div>
+
+</body>
+</html>
