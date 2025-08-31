@@ -1,158 +1,80 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Contact APS Office</title>
-    <style>
-        body {
-            font-family: Verdana, sans-serif;
-            background-color: #eaeaea; /* Softer background color */
-            color: #333;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
 
-        .container {
-            text-align: center; /* Centered text for a more inviting layout */
-            background-color: #fff;
-            padding: 20px; /* Increased padding for better spacing */
-            border-radius: 8px; /* Rounded corners for a modern look */
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-            width: 90%; /* Adjusted for better readability */
-            max-width: 500px; /* Limit the width for larger screens */
-        }
+  <meta charset="UTF-8" />
 
-        h1 {
-            color: #333; /* Darker header for better contrast */
-            font-size: 24px; /* Larger header font */
-            margin-bottom: 15px;
-        }
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-        p {
-            font-size: 16px; /* Increased font size for readability */
-            margin-bottom: 10px; /* More spacing below paragraphs */
-        }
+  <title>Contact APS Office</title>
 
-        .email-text {
-            font-size: 16px; /* Increased font size */
-            color: #0056b3; /* Changed to a dark blue for visibility */
-            background-color: #f0f8ff; /* Light blue background for distinction */
-            padding: 10px; /* More padding for comfort */
-            border: 1px solid #007bff; /* Clearer border */
-            border-radius: 4px; /* Slight rounding for the email box */
-            display: inline-block;
-            margin-top: 15px;
-        }
+  <style>
 
-        /* Popup styles */
-        #popup {
-            display: none;
-            position: fixed;
-            top: 30%;
-            left: 50%;
-            transform: translate(-50%, -30%);
-            background-color: #ffffff; /* White background for the popup */
-            border-radius: 12px; /* More rounded corners */
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Deeper shadow for emphasis */
-            padding: 30px; /* Increased padding */
-            z-index: 1000;
-            animation: fadeIn 0.3s; /* Fade-in animation */
-        }
+    body {
 
-        #overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7); /* Darker overlay for contrast */
-            z-index: 999;
-        }
+      font-family: Verdana, sans-serif; /* Decent font but uninspired */
 
-        #popup h2 {
-            color: #444; /* Darker title color */
-            font-size: 22px; /* Larger title font size */
-            margin-bottom: 15px;
-        }
+      background-color: #f0f0f0; /* Generic, dull background */
 
-        #popup p {
-            font-size: 16px; /* Consistent font size */
-            margin-bottom: 20px; /* More space under the text */
-        }
+      color: #333; /* Low contrast with the background */
 
-        #popup label {
-            font-size: 14px; /* Slightly smaller label font */
-            color: #555; /* Grey color for the label */
-        }
+      margin: 0;
 
-        #closePopup {
-            background-color: #007bff; /* Primary action button color */
-            color: white; /* Button text color */
-            border: none;
-            border-radius: 5px; /* Rounded button corners */
-            padding: 10px 20px; /* Button padding */
-            cursor: pointer; /* Pointer cursor on hover */
-            transition: background-color 0.3s; /* Smooth hover transition */
-        }
+      padding: 0;
 
-        #closePopup:hover {
-            background-color: #0056b3; /* Darker shade on hover */
-        }
+      display: flex;
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-    </style>
+      justify-content: center;
+
+      align-items: center;
+
+      height: 100vh;
+
+    }
+
+    .container {
+text-align: left; /* Misaligned container text /
+background-color: #fff; / Plain white background /
+padding: 10px; / Minimal padding /
+border: 2px solid #ccc; / Bland border /
+width: 80%; / Too wide for readability /
+line-height: 1.2; / Cramped text */
+}
+
+    h1 {
+color: #555; /* Low-contrast header /
+font-size: 20px; / Smaller than needed for a header */
+margin-bottom: 10px;
+}
+
+    p {
+font-size: 14px; /* Small text /
+margin-bottom: 5px; / Tight spacing */
+}
+
+    .email-text {
+font-size: 14px; /* Small and hard to read /
+color: #777; / Faint text color /
+background-color: #eaeaea; / Almost blends into the background /
+padding: 5px; / Minimal space around text /
+border: 1px solid #ddd; / Barely visible border */
+display: inline-block;
+margin-top: 10px;
+}
+</style>
+
 </head>
+
 <body>
 
-    <div class="container">
-        <h1>Contact APS Office</h1>
-        <p>If you have any questions, you can email us at:</p>
-        <div class="email-text">aps@kfupm.edu.sa</div>
-    </div>
-
-    <!-- Popup and overlay -->
-    <div id="overlay"></div>
-    <div id="popup">
-        <h2>Welcome!</h2>
-        <p>This is your first visit to our site.</p>
-        <label>
-            <input type="checkbox" id="doNotShowAgain"> Do not show again
-        </label>
-        <br><br>
-        <button id="closePopup">Close</button>
-    </div>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const popup = document.getElementById('popup');
-            const overlay = document.getElementById('overlay');
-            const closePopup = document.getElementById('closePopup');
-            const doNotShowAgain = document.getElementById('doNotShowAgain');
-
-            // Check localStorage to see if the popup should be shown
-            if (!localStorage.getItem('doNotShowAgain')) {
-                popup.style.display = 'block';
-                overlay.style.display = 'block';
-            }
-
-            closePopup.addEventListener('click', function () {
-                if (doNotShowAgain.checked) {
-                    localStorage.setItem('doNotShowAgain', 'true');
-                }
-                popup.style.display = 'none';
-                overlay.style.display = 'none';
-            });
-        });
-    </script>
+  <div class="container">
+<h1>Contact APS Office</h1>
+<p>If you have any questions, you can email us at:</p>
+<div class="email-text">aps@kfupm.edu.sa</div>
+</div>
 
 </body>
+
 </html>
